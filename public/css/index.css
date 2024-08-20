@@ -1,0 +1,276 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0; /* Start with body hidden */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+    background-color: #000; /* Black background for the body */
+    color: #fff; /* White text color for the body */
+  }
+  .text-container {
+      font-size: 24px;
+      font-family: monospace;
+      white-space: nowrap;
+      overflow: hidden;
+      position: absolute; /* Ensure it can be positioned absolutely */
+  }
+
+  .container {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000; /* Black background */
+      color: #fff; /* White text color */
+      position: relative;
+      overflow: hidden; /* Ensure text doesn't overflow */
+  }
+
+  .result {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #fff; /* White text color */
+      font-family: monospace;
+      position: absolute; /* Allow positioning */
+  }
+  .main-content {
+    display: flex; /* Ensure flexbox layout */
+    flex-direction: column; /* Align items in a column */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    padding: 0;
+    background: #000; /* Black background */
+    color: #fff; /* White text color */
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    opacity: 0; /* Start with opacity 0 */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+    position: relative; /* Ensure positioning context for children */
+    }
+
+
+  .swiper {
+      width: 100%;
+      max-width: 1500px; /* Adjust as needed */
+      height: 300px; /* Adjust as needed */
+      margin: auto; /* Center horizontally */
+  }
+
+  .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 300px;
+      /* Center the slide content */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensure images cover the slide area */
+  }
+
+  /* Blur effect for non-active slides */
+  .swiper-slide:not(.swiper-slide-active) {
+      filter: blur(2px); /* Adjust the blur amount as needed */
+      opacity: 0.4; /* Optional: Adjust the opacity for better effect */
+  }
+
+  .fade-in {
+      display: block;
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+  }
+
+  /* Styling for loading text */
+  .loading {
+      position: absolute;
+      font-size: 20px;
+      color: #fff; /* White text color */
+      font-family: monospace;
+      bottom: 20px; /* Adjust this value as needed */
+      left: 20px; /* Adjust this value as needed */
+      transform: translate(0, 0);
+      opacity: 0.8;
+      white-space: nowrap;
+      pointer-events: none;
+  }
+
+  .loading:nth-child(1) {
+      z-index: 1;
+      animation: glitch-anim-1 0.5s infinite linear;
+  }
+
+  .loading:nth-child(2) {
+      z-index: 2;
+      animation: glitch-anim-2 0.5s infinite linear;
+  }
+
+  .loading:nth-child(3) {
+      z-index: 3;
+      animation: glitch-anim-3 0.5s infinite linear;
+  }
+
+  @keyframes glitch-anim-1 {
+      0% {
+          transform: translate(0, 0) skew(0deg);
+          opacity: 0.8;
+      }
+      20% {
+          transform: translate(-2px, -2px) skew(-5deg);
+          opacity: 0.6;
+      }
+      40% {
+          transform: translate(2px, 2px) skew(5deg);
+          opacity: 0.8;
+      }
+      60% {
+          transform: translate(-2px, 2px) skew(-5deg);
+          opacity: 0.6;
+      }
+      80% {
+          transform: translate(2px, -2px) skew(5deg);
+          opacity: 0.8;
+      }
+      100% {
+          transform: translate(0, 0) skew(0deg);
+          opacity: 0.8;
+      }
+  }
+
+  @keyframes glitch-anim-2 {
+      0% {
+          transform: translate(0, 0) skew(0deg);
+          opacity: 0.8;
+      }
+      20% {
+          transform: translate(2px, -2px) skew(5deg);
+          opacity: 0.6;
+      }
+      40% {
+          transform: translate(-2px, 2px) skew(-5deg);
+          opacity: 0.8;
+      }
+      60% {
+          transform: translate(2px, 2px) skew(5deg);
+          opacity: 0.6;
+      }
+      80% {
+          transform: translate(-2px, -2px) skew(-5deg);
+          opacity: 0.8;
+      }
+      100% {
+          transform: translate(0, 0) skew(0deg);
+          opacity: 0.8;
+      }
+  }
+
+  @keyframes glitch-anim-3 {
+      0% {
+          transform: translate(0, 0) skew(0deg);
+          opacity: 0.8;
+      }
+      20% {
+          transform: translate(-2px, 2px) skew(-5deg);
+          opacity: 0.6;
+      }
+      40% {
+          transform: translate(2px, -2px) skew(5deg);
+          opacity: 0.8;
+      }
+      60% {
+          transform: translate(-2px, -2px) skew(-5deg);
+          opacity: 0.6;
+      }
+      80% {
+          transform: translate(2px, 2px) skew(5deg);
+          opacity: 0.8;
+      }
+      100% {
+          transform: translate(0, 0) skew(0deg);
+          opacity: 0.8;
+      }
+  }
+  .main-title {
+    position: absolute; /* Absolute positioning */
+    top: 20px; /* Adjust this value as needed to position at the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for the actual width of the element */
+    font-size: 96px; /* Font size as needed */
+    font-family: 'Fira Mono', monospace;
+    letter-spacing: -7px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Ensure it’s above other content if needed */
+}
+  @keyframes glitch-title{
+    2%,64%{
+      transform: translate(2px,0) skew(0deg);
+    }
+    4%,60%{
+      transform: translate(-2px,0) skew(0deg);
+    }
+    62%{
+      transform: translate(0,0) skew(5deg); 
+    }
+  }
+  .main-title:before,
+  .main-title:after {
+    content: attr(title);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent interaction with pseudo-elements */
+  }
+
+  .main-title:before {
+    animation: glitchTop 1s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    z-index: -1; /* Place below the main title */
+  }
+
+  @keyframes glitchTop {
+    2%, 64% {
+      transform: translate(2px, -2px);
+    }
+    4%, 60% {
+      transform: translate(-2px, 2px);
+    }
+    62% {
+      transform: translate(13px, -1px) skew(-13deg); 
+    }
+  }
+
+  .main-title:after {
+    animation: glitchBottom 1.5s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    z-index: -2; /* Place below the main title */
+  }
+
+  @keyframes glitchBottom {
+    2%, 64% {
+      transform: translate(-2px, 0);
+    }
+    4%, 60% {
+      transform: translate(-2px, 0);
+    }
+    62% {
+      transform: translate(-22px, 5px) skew(21deg); 
+    }
+  }
