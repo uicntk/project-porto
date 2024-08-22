@@ -5,6 +5,10 @@
         effect: "coverflow",
         centeredSlides: true,
         slidesPerView: "auto",
+        autoplay: {
+            delay: 2500, // Delay between slides in ms
+            disableOnInteraction: false, // Continue autoplay after user interactions
+        },
         coverflowEffect: {
           rotate: 50,
           stretch: 0,
