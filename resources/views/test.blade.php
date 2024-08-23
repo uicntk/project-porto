@@ -24,12 +24,12 @@
             opacity: 0; /* Start with body hidden */
             transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
             color: #000000; /* Text color */
-        }
+        /* }
 
         /* Initial hidden state for the header */
         header.hidden {
             display: none;
-        }
+        } */
 
         .result {
             font-size: 24px;

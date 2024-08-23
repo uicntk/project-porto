@@ -19,3 +19,19 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return view('test');
 });
+Route::prefix('test_page')->group(function() {
+    Route::get('/test', function () {
+        return view('page.index');
+    });
+});
+Route::prefix('testrun')->group(function() {
+    Route::get('/sweep', function () {
+        return view('testing.sweep');
+    });
+    Route::get('/template', function () {
+        return view('testing.newtemplate');
+    });
+    Route::get('/randomize', function () {
+        return view('testing.randomize');
+    });
+});

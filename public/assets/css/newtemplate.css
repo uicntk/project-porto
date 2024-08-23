@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    overflow: hidden; /* Prevent overflow on body */
+}
+
+/* Initial hidden state for the header */
+header.hidden {
+    display: none;
+}
+
+header {
+    background: none; /* Remove background color */
+    color: black;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the left */
+    padding: 10px;
+    position: relative; /* Establish positioning context */
+}
+
+nav a {
+    color: black; /* Default text color */
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: 2px solid transparent; /* Invisible border by default */
+    border-radius: 5px;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+.container {
+    display: flex;
+    flex-direction: row; /* Horizontal scrolling */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    overflow-x: auto; /* Horizontal scrolling */
+    overflow-y: hidden; /* Hide vertical scrolling */
+    background: #fff; /* Background color for the container */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    scroll-snap-type: x mandatory; /* Horizontal snap points */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+    align-items: center; /* Center items vertically */
+    font-size: 24px;
+}
+
+
+.container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.page {
+    flex: 0 0 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    box-sizing: border-box;
+    padding: 20px;
+    background: #f4f4f4;
+    scroll-snap-align: start; /* Snap sections to start */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease-in-out; /* Fade-in transition */
+}
+
+.page.active {
+    opacity: 1; /* Fade-in effect when active */
+}
+/* Burger menu button styles */
+.burger-menu {
+    display: none; /* Hide by default, show only in mobile view */
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed; /* Fixed position */
+    top: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    z-index: 1001; /* Ensure it's above other elements */
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    /* Mobile specific styles for nav-links */
+    #navLinks {
+        display: flex; /* Show nav links on desktop */
+        position: static; /* Reset position on desktop */
+        background: none; /* Remove background on desktop */
+        box-shadow: none; /* Remove shadow on desktop */
+    }
+
+    /* Ensure the burger menu button is hidden on desktop */
+    .burger-menu {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Vertical scrolling on mobile */
+        overflow-x: hidden; /* Hide horizontal scrolling on mobile */
+        overflow-y: auto; /* Enable vertical scrolling on mobile */
+        scrollbar-width: auto; /* Show scrollbar for Firefox */
+    }
+
+    .page {
+        width: 100%; /* Full width for mobile */
+        height: auto; /* Height based on content */
+        min-height: 100vh; /* Ensure sections cover the viewport height */
+        position: static; /* Reset position for mobile */
+        opacity: 1; /* No fade effect on mobile */
+        transition: none; /* Disable transition on mobile */
+        display: flex; /* Ensure display flex for centering content */
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center content horizontally */
+        justify-content: center; /* Center content vertically */
+        margin: 0; /* Remove default margin */
+        box-sizing: border-box; /* Ensure padding is included in width */
+    }
+    #navLinks {
+        display: none; /* Hide nav links by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        position: fixed;
+        top: 60px; /* Adjust to fit your header height */
+        left: 0;
+        z-index: 1000;
+        padding: 20px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #navLinks.show {
+        display: flex; /* Show nav links when the menu is active */
+    }
+
+    .burger-menu {
+        display: block; /* Show burger button on mobile */
+    }
+}
