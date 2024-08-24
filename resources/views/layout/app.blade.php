@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{{URL::asset('img/icon/zero.png')}}" type="image/gif">
+    <link href="{{URL::asset('assets/css/randomize.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('assets/css/newtemplate.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('assets/css/card.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('assets/css/demo.css')}}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link href="{{URL::asset('css/index.css')}}" rel="stylesheet" type="text/css" />
-    <title>Eva</title>
+    <title>Sougetsu Ui</title>
     @yield('css')
 </head>
 <body>
@@ -14,35 +17,38 @@
         <div class="loading">Loading...</div>
         <div class="loading">Loading...</div>
         <div class="loading">Loading...</div>
-        <div class="result" style="font-size: 50px;" id="result-text">Transforming...</div>
+        <div class="result" id="result-text">Transforming...</div>
     </div>
     
-    <div id="main-content" class="main-content">
+    <div id="main-content" class="main-content" style="display: none;">
         <header>
             <nav>
-                <a href="#" id="homeLink">Home</a>
-                <a href="#" id="aboutLink">About</a>
-                <a href="#" id="galleryLink">Gallery</a>
-                <a href="#" id="contactLink">Contact</a>
+                <button id="burgerMenu" class="burger-menu">&#9776;</button>
+                <div id="navLinks">
+                    <a href="" id="homeLink" class="active">Home</a>
+                    <a href="" id="aboutLink">About</a>
+                    <a href="" id="galleryLink">Gallery</a>
+                    <a href="" id="contactLink">Contact</a>
+                </div>
             </nav>
         </header>
-        <div id="app">
-            <section id="home" class="page visible">
+        <div id="app" class="container">
+            <section id="home" class="page active">
                 @yield('home')
             </section>
-            <section id="about" class="page hidden">
+            <section id="about" class="page">
                 @yield('about')
             </section>
-            <section id="gallery" class="page hidden">
+            <section id="gallery" class="page gallery">
                 @yield('gallery')
             </section>
-            <section id="contact" class="page hidden">
+            <section id="contact" class="page">
                 @yield('contact')
             </section>
         </div>
     </div>
+    <script src="{{URL::asset('assets/js/newtemplate.js')}}"></script>
+    <script src="{{URL::asset('assets/js/randomize.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="{{URL::asset('js/index.js')}}"></script>
-    @yield('js')
 </body>
 </html>

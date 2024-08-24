@@ -1,0 +1,101 @@
+
+.card {
+    width: 100%;
+    max-width: 1500px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0); /* White with 80% opacity */
+    color: white;
+    /* Ensure the card has a defined height */
+    height: 700px; /* Adjust this value as needed */
+}
+
+.card-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.text-side {
+    flex: 1;
+    padding: 20px;
+    background-color: transparent; /* Ensure text side background is transparent */
+}
+
+.image-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100%;
+}
+
+.card_about {
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.2); /* White with 80% opacity */
+    backdrop-filter: blur(10px); /* Optional: Adds a blur effect to the background behind the card */
+    height: 500px; /* Adjust this value as needed */
+}
+
+.image-about {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100%;
+    background-size:cover
+}
+
+.swiper {
+    width: 100%;
+    height: 100%; /* Make sure Swiper takes up the full height of the container */
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ensure slides fill the container height */
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the slide area */
+    transition: transform 0.3s ease; /* Smooth transition for scaling effect */
+}
+
+.swiper-slide:hover img {
+    transform: scale(1.1); /* Enlarge the image by 10% on hover */
+    z-index: 1; /* Ensure the enlarged image appears above other content */
+}
+
+@media (max-width: 768px) {
+    .card-content {
+        flex-direction: column;
+    }
+
+    .text-side,
+    .image-side {
+        width: 100%;
+    }
+
+    .text-side {
+        order: 2;
+    }
+
+    .image-side {
+        order: 1;
+    }
+}
