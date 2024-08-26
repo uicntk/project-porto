@@ -113,6 +113,7 @@
                 position: static;
                 background: none;
                 box-shadow: none;
+                transition: background-color 0.3s ease;
             }
 
             .burger-menu {
@@ -142,11 +143,34 @@
                 margin: 0; /* Remove default margin */
                 box-sizing: border-box; /* Ensure padding is included in width */
             }
+            .burger-menu {
+                transition: transform 0.3s ease, left 0.3s ease; /* Smooth position animation */
+            }
             #navLinks {
                 display: none; /* Hide nav links by default on mobile */
                 flex-direction: column;
+                width: 90%;
+                height: 100vh; /* Full viewport height */
+                background: rgb(255, 255, 255);
+                position: fixed;
+                top: 0px; /* Adjust to fit your header height */
+                left: 0;
+                z-index: 1000;
+                padding: 20px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                overflow-y: auto;
+                transition: opacity 0.3s ease;
+                align-items: center; /* Center nav links horizontally */
+                justify-content: center; /* Center nav links vertically */
+                transition: opacity 0.3s ease, visibility 0.3s ease; /* Fade-out transition */
+                opacity: 0; /* Start with opacity 0 for fade-out effect */
+                visibility: hidden; /* Hide element to avoid interaction */
+            }
+            .navLinks {
+                display: none; /* Hide nav links by default on mobile */
+                flex-direction: column;
                 width: 100%;
-                background: white;
+                background: rgb(255, 255, 255);
                 position: fixed;
                 top: 60px; /* Adjust to fit your header height */
                 left: 0;
@@ -157,10 +181,31 @@
 
             #navLinks.show {
                 display: flex; /* Show nav links when the menu is active */
+                opacity: 1;
+                visibility: visible; /* Make element visible */
+            }
+
+            #navLinks.hide {
+                opacity: 0; /* Fade out effect */
+                visibility: hidden; /* Hide element to avoid interaction */
+            }
+        
+            #navLinks a {
+                text-decoration: none;
+                color: black;
+                font-size: 24px;
+                margin: 15px 0;
             }
 
             .burger-menu {
                 display: block; /* Show burger button on mobile */
+            }
+
+            /* Styles for when the menu is open */
+            .menu-open .burger-menu {
+                transform: translateX(calc(100vw - 60px)); /* Move burger button to the right */
+                background: rgb(255, 255, 255);
+                left: auto; /* Remove left positioning */
             }
         }
 

@@ -8,6 +8,7 @@
     <link href="{{URL::asset('assets/css/newtemplate.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{URL::asset('assets/css/card.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{URL::asset('assets/css/demo.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('assets/css/slider.css')}}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>Sougetsu Ui</title>
     @yield('css')
@@ -17,7 +18,7 @@
         <div class="loading">Loading...</div>
         <div class="loading">Loading...</div>
         <div class="loading">Loading...</div>
-        <div class="result" id="result-text">Transforming...</div>
+        <div class="result" id="result-text"></div>
     </div>
     
     <div id="main-content" class="main-content" style="display: none;">
@@ -47,8 +48,8 @@
             </section>
         </div>
     </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="{{URL::asset('assets/js/newtemplate.js')}}"></script>
-    <script src="{{URL::asset('assets/js/randomize.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>

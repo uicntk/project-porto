@@ -4,6 +4,12 @@
 	--color-title: #2655e4;
 	--color-subtitle: #81c4ff;
 }
+@media (max-width: 768px) {
+    .gallery {
+		--glitch-width: 20vmax;
+		--glitch-height: calc(40vmax * 1.25);
+    }
+}
 
 .glitch--style-1 {
 	--gap-horizontal: 20px;
@@ -112,7 +118,7 @@
 }
 
 .grid__item {
-    margin: 0 0 40vh;
+    margin: 0 0 10vh;
     position: relative;
 }
 

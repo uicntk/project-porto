@@ -662,6 +662,7 @@
 
             // Initialize the first page
             updatePage(currentPage);
+            
             var swiper = new Swiper(".mySwiper", {
                 effect: "coverflow",
                 centeredSlides: true,
