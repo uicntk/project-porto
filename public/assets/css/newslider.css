@@ -1,0 +1,215 @@
+
+
+.slider-container {
+    position: relative;
+    width: 1200px; /* Width to show 3 images with spacing */
+    height: 800px;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+.gallery {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+.image-container {
+    position: relative;
+    width: 400px; /* Width of each image */
+    height: 700px; /* Height of each image */
+    margin-right: 20px; /* Space between images */
+    flex-shrink: 0; /* Prevent images from shrinking */
+    transition: opacity 0.5s ease, filter 0.5s ease;
+}
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.image-title {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.nav-button {
+    position: absolute;
+    bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 20px;
+    z-index: 2;
+}
+.nav-button.left {
+    left: 10px;
+}
+.nav-button.right {
+    right: 10px;
+}
+.focused {
+    z-index: 1;
+    opacity: 1;
+    filter: none;
+}
+.blurred {
+    opacity: 0.5;
+    filter: blur(5px);
+    z-index: 0;
+}
+.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+@media (max-width: 768px) {
+    .slider-container {
+        position: relative;
+        width: 400px; /* Width to show 3 images with spacing */
+        height: 600px;
+        overflow: hidden;
+    }
+    .image-title {
+        position: absolute;
+        bottom: 20px;
+    }
+    .image-container {
+        position: relative;
+        width: 110px; /* Width of each image */
+        height: 500px; /* Height of each image */
+        margin-right: 10px; /* Space between images */
+        margin-left: 12px; /* Space between images */
+        flex-shrink: 0; /* Prevent images from shrinking */
+        transition: opacity 0.5s ease, filter 0.5s ease;
+    }
+}
+
+
+
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Black with opacity */
+    opacity: 0; /* Start with opacity 0 */
+    visibility: hidden; /* Hidden by default */
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Smooth transition */
+}
+
+/* Modal visible */
+.modal.show {
+    opacity: 1; /* Fade in to full opacity */
+    visibility: visible; /* Make it visible */
+}
+
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%; /* Ensure it does not overflow */
+    max-height: 90vh; /* Limit height to fit within viewport */
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+
+.close {
+    position: fixed;
+    top: 20px; /* Distance from the top of the viewport */
+    right: 40px; /* Distance from the right of the viewport */
+    font-size: 120px; /* Increased font size for a larger button */
+    font-weight: bold;
+    transition: 0.3s;
+    z-index: 1001; /* Ensure it's above other content */
+    color : black;
+}
+
+.close:hover, .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+/* Ensure the content inside modal uses full height */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%; /* Full height of the modal */
+    margin: 0;
+}
+
+.column {
+    flex: 1 1 25%; /* Flex grow, shrink, and basis */
+    max-width: 25%;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.column img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove bottom margin/space */
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+    .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* Ensure modal content can be scrolled */
+.modal-content {
+    overflow: auto;
+}
+

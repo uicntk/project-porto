@@ -7,8 +7,7 @@
     <link href="{{URL::asset('assets/css/randomize.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{URL::asset('assets/css/newtemplate.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{URL::asset('assets/css/card.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{URL::asset('assets/css/demo.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{URL::asset('assets/css/slider.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('assets/css/newslider.css')}}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>Sougetsu Ui</title>
     @yield('css')
@@ -40,7 +39,7 @@
             <section id="about" class="page">
                 @yield('about')
             </section>
-            <section id="gallery" class="page gallery">
+            <section id="gallery" class="page">
                 @yield('gallery')
             </section>
             <section id="contact" class="page">

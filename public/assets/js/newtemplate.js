@@ -136,12 +136,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         const container = document.querySelector('.container');
         let currentPage = 'home';
         let isScrolling = false;
+        let isModalOpen = false; // Flag to check if the modal is open
+
     
         function isMobileDevice() {
             return /Mobi|Android/i.test(navigator.userAgent);
         }
     
         function updatePage(newPage) {
+            if (isModalOpen) return; // Prevent page update if modal is open
+        
             const currentPageElement = document.getElementById(currentPage);
             if (currentPageElement) {
                 currentPageElement.classList.remove('active');
@@ -149,23 +153,26 @@ document.addEventListener('DOMContentLoaded', async () => {
                     currentPageElement.classList.add('hidden'); // Add hidden class in desktop mode
                 }
             }
-    
+        
             const newPageElement = document.getElementById(newPage);
             if (newPageElement) {
                 newPageElement.classList.remove('hidden'); // Remove hidden class
                 newPageElement.classList.add('active');
             }
-    
+        
             currentPage = newPage;
-    
+        
             navLinksElements.forEach(link => link.classList.remove('active'));
             const activeLink = document.getElementById(`${currentPage}Link`);
             if (activeLink) {
                 activeLink.classList.add('active');
             }
         }
+        
     
         function scrollToSection(section) {
+            if (isModalOpen) return; // Prevent scrolling if modal is open
+        
             if (section) {
                 if (isMobileDevice()) {
                     // Add a delay before scrolling on mobile devices
@@ -180,6 +187,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
             }
         }
+        
     
         function handleScroll(event) {
             if (isMobileDevice() || isScrolling) return;
@@ -327,17 +335,85 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
         swiper.update();
 
-        var slider = new Swiper(".slider", {
-            slidesPerView: 3,
-            spaceBetween: 10,
-            centeredSlides: true,
-            observer: true,
-            observeParents: true,
-            centerInsufficientSlides: true,
-            centeredSlidesBounds	: true,
-            loop: true, // Enable infinite loop
-          });
-        slider.update();
+        
+        const gallery = document.querySelector('.gallery');
+        const slides = Array.from(gallery.children);
+        const slideCount = slides.length;
+        let currentIndex = 1; // Start with the middle image
+    
+        function updateFocus() {
+            console.log('Current Index:', currentIndex); // Log the current index
+            slides.forEach((slide, index) => {
+                if (index === currentIndex) {
+                    slide.classList.add('focused');
+                    slide.classList.remove('blurred');
+                    slide.classList.remove('disabled');
+                } else {
+                    slide.classList.remove('focused');
+                    slide.classList.add('blurred');
+                    slide.classList.add('disabled');
+                }
+            });
+        }
+    
+        // Function to move the slide left or right
+        function moveSlide(direction) {
+            currentIndex = (currentIndex + direction + slideCount) % slideCount;
+            updateFocus();
+        }
+    
+        // Attach event listeners to navigation buttons
+        document.querySelector('.nav-button.left').addEventListener('click', () => moveSlide(-1));
+        document.querySelector('.nav-button.right').addEventListener('click', () => moveSlide(1));
+    
+        // Initialize gallery focus
+        updateFocus();
+
+        
+        // Function to open the modal
+        function openModal() {
+            document.body.classList.add('no-scroll'); // Prevent scrolling of main content
+            isModalOpen = true; // Set flag to true
+        }
+        
+
+        // Function to close the modal
+        function closeModal() {
+            document.body.classList.remove('no-scroll'); // Re-enable scrolling of main content
+            isModalOpen = false; // Set flag to false
+        }
+        // Modal script
+        const modal = document.getElementById("myModal");
+        const img = document.getElementById("myImg");
+        const span = document.getElementsByClassName("close")[0];
+
+        img.onclick = function() {
+            modal.style.display = 'block'; // Ensure modal is in the document flow
+            openModal()
+            setTimeout(() => {
+                modal.classList.add('show'); // Start the fade-in effect
+            }, 10); // Short delay to ensure CSS transition is applied
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.classList.remove('show'); // Start the fade-out effect
+            closeModal()
+            setTimeout(() => {
+                modal.style.display = 'none'; // Remove from document flow after fade-out
+            }, 500); // Match this delay with CSS transition duration
+        }
+
+        // Close the modal when clicking outside of the modal content
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.classList.remove('show'); // Start the fade-out effect
+                setTimeout(() => {
+                    modal.style.display = 'none'; // Remove from document flow after fade-out
+                }, 500); // Match this delay with CSS transition duration
+            }
+        }
+
         
         console.log('Loading phase 2 (js2)...');
 

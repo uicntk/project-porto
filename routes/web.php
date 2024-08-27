@@ -34,4 +34,7 @@ Route::prefix('testrun')->group(function() {
     Route::get('/randomize', function () {
         return view('testing.randomize');
     });
+    Route::get('/spa', function () {
+        return view('testing.spanewpage');
+    });
 });
