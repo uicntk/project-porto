@@ -106,15 +106,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         
         function showMainContent() {
             const splashScreen = document.getElementById('splash-screen');
-            const mainContent = document.getElementById('main-content');
             
             splashScreen.classList.add('hidden'); // Add hidden class to fade out splash screen
         
             // Wait for fade out to complete before showing main content
             setTimeout(() => {
-                mainContent.style.display = 'block'; // Show main content
-                mainContent.classList.add('visible'); // Add visible class to fade in main content
-            }, 1000); // Ensure this matches the duration of the splash screen fade-out
+                $("#videos").show()
+            }, 100); // Ensure this matches the duration of the splash screen fade-out
         }
         
         // Initialize the splash screen
@@ -126,6 +124,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         await new Promise(resolve => setTimeout(resolve, 5000));
 
         console.log('Phase 1 done.');
+    }
+    async function loadvideo() {
+
+        
+        const mainContent = document.getElementById('main-content');
+        // Wait for fade out to complete before showing main content
+        setTimeout(() => {
+            $("#videos").hide()
+            mainContent.style.display = 'block';
+            mainContent.classList.add('visible'); // Add visible class to fade in main content
+        }, 3000); // Ensure this matches the duration of the splash screen fade-out
+
+        console.log('Processing video ...');
+
+        // Simulate some async work with a delay
+        await new Promise(resolve => setTimeout(resolve, 3000));
+
+        console.log('video done.');
+
+
     }
 
     // Function to simulate loading the second script
@@ -342,7 +360,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         let currentIndex = 1; // Start with the middle image
     
         function updateFocus() {
-            console.log('Current Index:', currentIndex); // Log the current index
             slides.forEach((slide, index) => {
                 if (index === currentIndex) {
                     slide.classList.add('focused');
@@ -428,6 +445,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         try {
             // Pass the page load duration as the duration for text transformation
             await processJs1();
+            await loadvideo();
             await loadJs2();
             await console.log('Every Page has been loaded.')
         } catch (error) {

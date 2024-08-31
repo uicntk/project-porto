@@ -10,6 +10,15 @@
     <link href="{{URL::asset('assets/css/newslider.css')}}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>Sougetsu Ui</title>
+    <style>
+
+        video {
+            width: 100%;
+            height: 100%;
+            opacity: 0.5; /* Adjust for desired transparency */
+        }
+        
+    </style>
     @yield('css')
 </head>
 <body>
@@ -46,6 +55,13 @@
                 @yield('contact')
             </section>
         </div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="video-container" id="videos" style="display:none;">
+        <video autoplay muted playsinline>
+            <source src="https://wutheringwaves.kurogames.com/static4.0/assets/end-en-eb5ab687.mp4" type="video/mp4">
+        </video>
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="{{URL::asset('assets/js/newtemplate.js')}}"></script>
