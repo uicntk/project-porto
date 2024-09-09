@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
 
     // Function to simulate asynchronous processing
-    async function processJs1(transformationDuration) {
+    async function processJs1() {
         const resultTextElement = document.getElementById('result-text');
         const container = document.getElementById('splash-screen');
         const originalText = 'tamayuraaa';
@@ -125,6 +125,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         console.log('Phase 1 done.');
     }
+
+
     async function loadvideo() {
 
         
