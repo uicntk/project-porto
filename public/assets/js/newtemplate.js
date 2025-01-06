@@ -108,10 +108,14 @@ document.addEventListener('DOMContentLoaded', async () => {
             const splashScreen = document.getElementById('splash-screen');
             
             splashScreen.classList.add('hidden'); // Add hidden class to fade out splash screen
+
+        
+            const mainContent = document.getElementById('main-content');
         
             // Wait for fade out to complete before showing main content
             setTimeout(() => {
-                $("#videos").show()
+                mainContent.style.display = 'block';
+                mainContent.classList.add('visible'); // Add visible class to fade in main content
             }, 100); // Ensure this matches the duration of the splash screen fade-out
         }
         
@@ -447,7 +451,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         try {
             // Pass the page load duration as the duration for text transformation
             await processJs1();
-            await loadvideo();
             await loadJs2();
             await console.log('Every Page has been loaded.')
         } catch (error) {
