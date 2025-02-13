@@ -41,7 +41,7 @@
                 </div>
             </nav>
         </header>
-        <div id="app" class="container">
+        <div id="app" class="container scroll-snap-container">
             <section id="home" class="page active">
                 @yield('home')
             </section>
