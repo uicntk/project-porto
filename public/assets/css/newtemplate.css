@@ -78,7 +78,7 @@
             justify-content: center;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
-            background-image: url('../img/images/bg.webp'); /* Set your background image */
+            background-image: url('../img/images/bg.jfif'); /* Set your background image */
             background-size: cover; /* Cover the entire page */
             background-position: center; /* Center the image */
             background-repeat: no-repeat; /* Prevent repeating the image */
@@ -142,6 +142,7 @@
                 justify-content: center; /* Center content vertically */
                 margin: 0; /* Remove default margin */
                 box-sizing: border-box; /* Ensure padding is included in width */
+                background-image: url('../img/images/bg2.png'); /* Set your background image */
             }
             .burger-menu {
                 transition: transform 0.3s ease, left 0.3s ease; /* Smooth position animation */
