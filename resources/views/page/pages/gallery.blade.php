@@ -2,15 +2,15 @@
     <div class="gallery">
         <!-- Original images -->
         <a href="#" class="image-container">
-            <img src="http://127.0.0.1:8000/assets/img/images/6.jfif" alt="Image 1" >
+            <img src="{{URL::asset('assets/img/images/6.jfif')}}" alt="Image 1" >
             <div class="image-title">Title 1</div>
         </a>
         <a href="#" class="image-container">
-            <img src="http://127.0.0.1:8000/assets/img/images/m1.jpg" alt="Image 3" id="myImg">
+            <img src="{{URL::asset('assets/img/images/m1.jpg')}}" alt="Image 3" id="myImg">
             <div class="image-title">Title 2</div>
         </a>
         <a href="#" class="image-container">
-            <img src="http://127.0.0.1:8000/assets/img/images/5.jfif" alt="Image 2" >
+            <img src="{{URL::asset('assets/img/images/5.jfif')}}" alt="Image 2" >
             <div class="image-title">Title 3</div>
         </a>
     </div>
