@@ -6,7 +6,7 @@
     <meta property="og:site_name" content="Sougetsu Ui" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="MyPortofolio" />
-    <meta property="og:description" content="Webpage description" />
+    <meta property="og:description" content="Hello Welcome to my portofolio, you can see every illustration that i drew." />
     <meta property="og:url" content="https://kirawaretaonna.com/" />
     <meta property="og:image" content="{{URL::asset('assets/img/images/bg2.png')}}" />
     <link rel="icon" href="{{URL::asset('img/icon/zero.png')}}" type="image/gif">
