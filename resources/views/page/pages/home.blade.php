@@ -1,8 +1,8 @@
 <div class="card">
     <div class="card-content">
         <div class="text-side">
-            <h2>Card Title</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non urna nec sem auctor fringilla.</p>
+            <h2>ようこそ私の世界へ</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, quasi qui totam corporis ea placeat quo laudantium blanditiis facilis quia deleniti perferendis, asperiores ad suscipit ab minima cupiditate. Corrupti, temporibus?</p>
         </div>
         <div class="image-side">
             <!-- Swiper -->

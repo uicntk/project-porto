@@ -5,8 +5,8 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0); /* White with 80% opacity */
-    color: white;
+    background-color: rgba(255, 255, 255, 0.295); /* White with 80% opacity */
+    color: rgb(0, 0, 0);
     /* Ensure the card has a defined height */
     height: 700px; /* Adjust this value as needed */
 }
