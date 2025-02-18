@@ -399,6 +399,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Function to open the modal
         function openModal() {
             document.body.classList.add('no-scroll'); // Prevent scrolling of main content
+            $("#burgerMenu").hide();
             isModalOpen = true; // Set flag to true
         }
         
@@ -406,6 +407,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Function to close the modal
         function closeModal() {
             document.body.classList.remove('no-scroll'); // Re-enable scrolling of main content
+            $("#burgerMenu").show();
             isModalOpen = false; // Set flag to false
         }
         // Modal script
