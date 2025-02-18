@@ -197,7 +197,7 @@
             },
             loop: true, // Enable infinite loop
             autoplay: {
-                delay: 3000, // Delay in milliseconds (3 seconds)
+                delay: 5000, // Delay in milliseconds
                 pauseOnMouseEnter: true,
                 disableOnInteraction: false, // Continue autoplay after user interactions
             },

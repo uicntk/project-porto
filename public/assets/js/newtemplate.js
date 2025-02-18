@@ -334,8 +334,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         window.addEventListener('wheel', handleScroll, { passive: false });
         container.addEventListener('mousedown', handleMouseDown);
         
-        
-        var swiper = new Swiper(".mySwiper", {
+        var swiper = new Swiper(".myswiper", {
             effect: "coverflow",
             centeredSlides: true,
             observer: true,
@@ -348,14 +347,16 @@ document.addEventListener('DOMContentLoaded', async () => {
                 modifier: 1,
                 slideShadows: true,
             },
-            pagination: {
-                el: ".swiper-pagination",
-            },
             loop: true, // Enable infinite loop
             autoplay: {
-                delay: 3000, // Delay in milliseconds (3 seconds)
+                delay: 5000, // Delay in milliseconds
+                pauseOnMouseEnter: true,
                 disableOnInteraction: false, // Continue autoplay after user interactions
-            }
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
         });
         
         swiper.update();
