@@ -12,7 +12,7 @@
         background-position: center;
         background-size: cover;
         width: 400px;
-        height: 300px;
+        height: 400px;
         /* Center the slide content */
         display: flex;
         align-items: center;
@@ -131,7 +131,7 @@
     <div class="card-content">
         <div class="text-side">
             <h2>ようこそ私の世界へ</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, quasi qui totam corporis ea placeat quo laudantium blanditiis facilis quia deleniti perferendis, asperiores ad suscipit ab minima cupiditate. Corrupti, temporibus?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, </p>
         </div>
         <div class="image-side">
             <div class="swiper myswiper" style="margin-top: 250px;">

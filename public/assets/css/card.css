@@ -28,7 +28,7 @@
 .text-side {
     flex: 1;
     padding: 20px;
-    margin-bottom: -50px;
+    margin-bottom: -500px;
     background-color: transparent; /* Ensure text side background is transparent */
 }
 
@@ -41,7 +41,7 @@
 
 .card_about {
     width: 100%;
-    max-width: 1800px;
+    max-width: 1500px;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
