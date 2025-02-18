@@ -351,13 +351,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             pagination: {
                 el: ".swiper-pagination",
             },
-            loop: false, // Enable infinite loop
+            loop: true, // Enable infinite loop
             autoplay: {
                 delay: 3000, // Delay in milliseconds (3 seconds)
                 disableOnInteraction: false, // Continue autoplay after user interactions
             }
         });
+        
         swiper.update();
+        
 
         
         const gallery = document.querySelector('.gallery');
