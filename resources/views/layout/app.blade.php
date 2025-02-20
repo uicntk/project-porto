@@ -69,7 +69,6 @@
             <source src="https://wutheringwaves.kurogames.com/static4.0/assets/end-en-eb5ab687.mp4" type="video/mp4">
         </video>
     </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="{{URL::asset('assets/js/newtemplate.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>

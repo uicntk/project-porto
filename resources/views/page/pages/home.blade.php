@@ -101,7 +101,7 @@
     <div class="card-content">
         <div class="text-side">
             <h2>ようこそ私の世界へ</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, </p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa officia consequatur dolor voluptas obcaecati, aut corrupti qui ullam? Excepturi asperiores velit perferendis consequuntur cum temporibus quasi architecto odit distinctio corrupti? </p>
         </div>
         <div class="image-side">
             <div class="swiper myswiper" style="margin-top: 250px;">
