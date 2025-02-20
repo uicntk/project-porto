@@ -213,6 +213,11 @@
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script>
         Fancybox.bind('[data-fancybox="gallery"]', {
+            Slideshow: {
+                progressParentEl: (slideshow) => {
+                    return slideshow.instance.container;
+                }
+            },
             Thumbs: false,
             Toolbar: {
                 display: {
