@@ -107,68 +107,71 @@
             <div class="swiper myswiper" style="margin-top: 250px;">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img id="myImg1" onClick="modFunc(this.id)" src="{{URL::asset('img/images/1.png')}}" />
+                        <a data-fancybox="galleryhome" data-src="{{URL::asset('img/images/1.png')}}">
+                            <img src="{{URL::asset('img/images/1.png')}}" />
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <img id="myImg2" onClick="modFunc(this.id)" src="{{URL::asset('img/images/2.jpg')}}" />
+                        <a data-fancybox="galleryhome" data-src="{{URL::asset('img/images/2.jpg')}}">
+                            <img src="{{URL::asset('img/images/2.jpg')}}" />
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <img id="myImg3" onClick="modFunc(this.id)" src="{{URL::asset('img/images/3.jpg')}}" />
+                        <a data-fancybox="galleryhome" data-src="{{URL::asset('img/images/3.jpg')}}">
+                            <img src="{{URL::asset('img/images/3.jpg')}}" />
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <img id="myImg4" onClick="modFunc(this.id)" src="{{URL::asset('img/images/4.png')}}" />
+                        <a data-fancybox="galleryhome" data-src="{{URL::asset('img/images/4.png')}}">
+                            <img src="{{URL::asset('img/images/4.png')}}" />
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <img id="myImg5" onClick="modFunc(this.id)" src="{{URL::asset('img/images/5.jfif')}}" />
+                        <a data-fancybox="galleryhome" data-src="{{URL::asset('img/images/5.jfif')}}">
+                            <img src="{{URL::asset('img/images/5.jfif')}}" />
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <img src="{{URL::asset('img/images/6.jfif')}}" />
+                        <a data-fancybox="galleryhome" data-src="{{URL::asset('img/images/6.jfif')}}">
+                            <img src="{{URL::asset('img/images/6.jfif')}}" />
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <img src="{{URL::asset('img/images/7.jpg')}}" />
+                        <a data-fancybox="galleryhome" data-src="{{URL::asset('img/images/7.jpg')}}">
+                            <img src="{{URL::asset('img/images/7.jpg')}}" />
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <img src="{{URL::asset('img/images/8.jpg')}}" />
+                        <a data-fancybox="galleryhome" data-src="{{URL::asset('img/images/8.jpg')}}">
+                            <img src="{{URL::asset('img/images/8.jpg')}}" />
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <img src="{{URL::asset('img/images/9.png')}}" />
+                        <a data-fancybox="galleryhome" data-src="{{URL::asset('img/images/9.png')}}">
+                            <img src="{{URL::asset('img/images/9.png')}}" />
+                        </a>
                     </div>
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
-
-
-            <!-- The Modal -->
-            <div id="myModals" class="modals">
-                <img class="modals-content" id="img01">
-            </div>
         </div>
     </div>
 </div>
 
-<script>
-    function modFunc(id) {
-        console.log(id)
-        // Get the modal
-        var modal = document.getElementById("myModals");
-
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById(id);
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-        modal.style.display = "block";
-        modalImg.src = img.src;
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    }
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<script>    
+    Fancybox.bind('[data-fancybox="galleryhome"]', {
+        Toolbar: {
+            display: {
+                left: ["infobar"],
+                middle: [
+                    "zoomIn",
+                    "zoomOut",
+                    "download",
+                ],
+                right: [ "close"],
+            },
+        },
+    });
 </script>
